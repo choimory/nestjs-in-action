@@ -8,13 +8,13 @@ async function bootstrap() {
   });
 
   //port
-  await app.listen(process.env.PORT);
+  await app.listen(AppModule.getPort());
 
   //validation
   app.useGlobalPipes(new ValidationPipe());
 
   //boot log
-  console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
-  console.log(`PORT: ${process.env.PORT}`);
+  console.log(`NODE_ENV: ${AppModule.getNodeEnv()}`);
+  console.log(`PORT: ${AppModule.getPort()}`);
 }
 bootstrap();
