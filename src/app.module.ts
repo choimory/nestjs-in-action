@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmOptions } from './config/typeorm.config';
+import { BoardModule } from './board/board.module';
+import { BoardCommentController } from './board/controller/board-comment.controller';
+import { BoardCommentService } from './board/service/board-comment.service';
 
 @Module({
   imports: [
@@ -12,9 +15,10 @@ import { typeOrmOptions } from './config/typeorm.config';
       envFilePath: `.env.${process.env.NODE_ENV}`, //package.json의 script로 실행될때 건내진 NODE_ENV
     }),
     TypeOrmModule.forRoot(typeOrmOptions),
+    BoardModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, BoardCommentController],
+  providers: [AppService, BoardCommentService],
 })
 export class AppModule {
   private static _nodeEnv: string;

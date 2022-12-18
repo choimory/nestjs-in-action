@@ -6,7 +6,7 @@ export const typeOrmOptions: TypeOrmModuleOptions = {
   port: 3306, //Number(process.env.DB_PORT),
   database: 'nestjs_in_action', //process.env.DB_SCHEMA,
   username: 'root', //process.env.DB_USER,
-  password: '', //process.env.DB_PASSWORD,
+  password: 'asdqwe123', //process.env.DB_PASSWORD,
   timezone: 'local',
   autoLoadEntities: true,
   charset: 'utf8mb4',
