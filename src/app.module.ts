@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { typeOrmOptions } from './config/typeorm.config';
 
 @Module({
   imports: [
@@ -9,6 +11,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`, //package.json의 script로 실행될때 건내진 NODE_ENV
     }),
+    TypeOrmModule.forRoot(typeOrmOptions),
   ],
   controllers: [AppController],
   providers: [AppService],

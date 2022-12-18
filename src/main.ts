@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { typeOrmOptions } from './config/typeorm.config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -16,5 +17,12 @@ async function bootstrap() {
   //boot log
   console.log(`NODE_ENV: ${AppModule.getNodeEnv()}`);
   console.log(`PORT: ${AppModule.getPort()}`);
+
+  console.log(process.env.DB_HOST);
+  console.log(process.env.DB_PORT);
+  console.log(process.env.DB_SCHEMA);
+  console.log(process.env.DB_USER);
+  console.log(process.env.DB_PASSWORD);
+  console.log(typeOrmOptions);
 }
 bootstrap();
