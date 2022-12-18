@@ -17,12 +17,6 @@ async function bootstrap() {
   //boot log
   console.log(`NODE_ENV: ${AppModule.getNodeEnv()}`);
   console.log(`PORT: ${AppModule.getPort()}`);
-
-  console.log(process.env.DB_HOST);
-  console.log(process.env.DB_PORT);
-  console.log(process.env.DB_SCHEMA);
-  console.log(process.env.DB_USER);
-  console.log(process.env.DB_PASSWORD);
   console.log(typeOrmOptions);
 }
 bootstrap();
