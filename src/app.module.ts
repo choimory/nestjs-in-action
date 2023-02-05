@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmOptions } from './config/typeorm.config';
+import { typeOrmOptions } from './config/typeorm/type.orm.option';
 import { BoardModule } from './board/board.module';
 import { BoardCommentController } from './board/controller/board-comment.controller';
 import { BoardCommentService } from './board/service/board-comment.service';
